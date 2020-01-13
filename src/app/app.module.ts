@@ -12,15 +12,18 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { BusesComponent } from './components/buses/buses.component';
 
+import { MatDialogModule } from '@angular/material'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddbusComponent } from './components/addbus/addbus.component';
+import { AlertComponent } from './components/alert/alert.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     BusesComponent,
-    AddbusComponent
+    AddbusComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +31,11 @@ import { AddbusComponent } from './components/addbus/addbus.component';
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebaseConfig, 'pruebaAngular'),
     AngularFirestoreModule,
+    MatDialogModule,
     FormsModule
+  ],
+  entryComponents: [    
+    AlertComponent
   ],
   providers: [BusesService],
   bootstrap: [AppComponent]
